@@ -251,6 +251,6 @@ from Stations
 where Location = 'South' and year(LaunchDate) > 2010;
 
  /* 10)Rank hosts based on the number of shows they have hosted?*/
- select hostname,showcount,dense_rank() over(Order by showcount DESC) as rankhosts
- from hosts h 
- join shows s on s.hostid = h.hostid;
+select HostName, ShowCount,
+dense_rank () OVER (order BY ShowCount desc) as rankhosts
+from Hosts;
