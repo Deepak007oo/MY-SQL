@@ -252,5 +252,5 @@ where Location = 'South' and year(LaunchDate) > 2010;
 
  /* 10)Rank hosts based on the number of shows they have hosted?*/
 select HostName, ShowCount,
-dense_rank () OVER (order BY ShowCount desc) as rankhosts
+dense_rank () OVER (order BY ShowCount desc) as rnk
 from Hosts;
